@@ -1,0 +1,8 @@
+{
+  "iterations": 4000,
+  "max_us": 13.5,
+  "min_us": 1.0,
+  "note": "machine dependent; excluded from the deterministic results",
+  "p50_us": 2.1,
+  "p95_us": 2.5
+}

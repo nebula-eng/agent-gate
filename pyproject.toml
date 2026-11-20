@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-gate"
+version = "1.0.0"
+description = "Capability-taint isolation for LLM tool-calling agents"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Blue" }]
+keywords = ["llm-security", "information-flow", "taint-tracking", "prompt-injection", "capability-lattice"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Typing :: Typed",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = []
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.8"]
+dev = ["flake8>=7.0", "matplotlib>=3.8"]
+
+[project.scripts]
+agent-gate = "agent_gate.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/nebula-eng/agent-gate"
+Documentation = "https://github.com/nebula-eng/agent-gate/tree/main/docs"
+Issues = "https://github.com/nebula-eng/agent-gate/issues"
+Changelog = "https://github.com/nebula-eng/agent-gate/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agent_gate = ["py.typed"]
